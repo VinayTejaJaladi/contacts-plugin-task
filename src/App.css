@@ -22,7 +22,12 @@ body {
 .contacts-container {
   background-color: rgba(161, 228, 228, 0.836);
   margin: 30px;
-  width: 25%;
+  width: 30vw;
+}
+@media screen and (max-width: 430px) {
+  .contacts-container {
+    width: 70vw;
+  }
 }
 .cc-toggled {
   height: 90%;
@@ -36,7 +41,9 @@ body {
   align-items: center;
   background-color: white;
   width: 90%;
-  margin: 20px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .dc-toggled {
   margin-bottom: 0;
@@ -56,6 +63,7 @@ body {
 .search-container {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .search-icon {
   background-color: white;
@@ -66,7 +74,7 @@ body {
 }
 .input-field {
   height: 50px;
-  width: 90%;
+  width: 100%;
   font-size: 25px;
   padding: 10px;
   border-left: none;
