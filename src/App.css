@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: black;
+}
+.contacts-container {
+  background-color: rgba(161, 228, 228, 0.836);
+  margin: 30px;
+  width: 25%;
+}
+.cc-toggled {
+  height: 90%;
+}
+.expanded-view-container {
+  height: 90%;
+}
+.default-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 90%;
+  margin: 20px;
+}
+.dc-toggled {
+  margin-bottom: 0;
+}
+.all-contacts {
+  margin-right: 20px;
+}
+.toggle-button {
+  background: transparent;
+  border: none;
+}
+
+.expanded-view-container {
+  margin: auto;
+  width: 90%;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  background-color: white;
+  border-right: none;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
+.input-field {
+  height: 50px;
+  width: 90%;
+  font-size: 25px;
+  padding: 10px;
+  border-left: none;
+}
