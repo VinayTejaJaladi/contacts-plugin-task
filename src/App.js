@@ -58,13 +58,12 @@ const contactsList = [
   'Venu',
   'Yashraj',
 ]
-contactsList.sort()
 
 class App extends Component {
-  state = {contacts: contactsList, isToggleOn: false, searchInput: ''}
+  state = {contacts: contactsList.sort(), isToggleOn: false, searchInput: ''}
 
   onChangeSearchInput = event => {
-    this.setState({searchInput: event.target.value}, this.updateContactsList)
+    this.setState({searchInput: event.target.value})
   }
 
   onPressKeyDown = event => {

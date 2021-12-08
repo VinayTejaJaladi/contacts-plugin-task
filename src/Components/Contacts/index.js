@@ -1,29 +1,23 @@
+/* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 import React from 'react'
 import './index.css'
 
 const Contacts = props => {
   const {data} = props
-  const updatedData = {}
-  let prefix = data[0][0]
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < data.length; i++) {
-    if (data[i][0] === prefix) {
-      if (updatedData[prefix]) {
-        updatedData[prefix].push(data[i])
-      } else {
-        updatedData[prefix] = [data[i]]
-      }
+
+  const updatedData = data.reduce((acc, cur) => {
+    const prefix = cur[0]
+    if (acc[prefix]) {
+      acc[prefix].push(cur)
     } else {
-      // eslint-disable-next-line prefer-destructuring
-      prefix = data[i][0]
-      updatedData[prefix] = [data[i]]
+      acc[prefix] = [cur]
     }
-  }
-  const headings = Object.keys(updatedData)
+    return acc
+  }, {})
 
   const refs = {}
-  for (const i of headings) {
+  for (const i in updatedData) {
     refs[i] = React.createRef()
   }
 
@@ -47,7 +41,7 @@ const Contacts = props => {
   }
 
   const renderHeadings = () =>
-    headings.map(each => (
+    Object.keys(updatedData).map(each => (
       <>
         <p className="headings" key={each} ref={refs[each]}>
           {each}
@@ -58,7 +52,7 @@ const Contacts = props => {
 
   const renderQuickButtons = () => (
     <div className="buttons-container">
-      {headings.map(each => (
+      {Object.keys(updatedData).map(each => (
         <button
           type="button"
           className="quick-buttons"
